@@ -11,7 +11,9 @@ HEADER	= ./philo.h
 # Sources 
 SRC_PATH = src/
 
-SRC		=	main.c						\
+SRC		=	main.c		\
+			utils.c		\
+			libft_utils.c	\
 		
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 
