@@ -26,3 +26,26 @@ Two structs will be used, t_data and t_philo:
 •	t_philo will hold information about philosophers (e.g. time to eat, time to sleep, amount of
 	eaten meals, etc.)
 
+t_data explained:
+
+	**av ->
+	philo_num -> ammount of philosophers
+	run_program -> ammount of time for which the program will run (ammount gained from get_time())
+	*mutex_forks -> forks that will serve as mutexes, its number equals philosophers number
+	mutex_message -> message that will be printed upon executing (e.g. "X is eating", "X is sleeping" etc.)
+	mutex_death -> if a philosopher dies, mutex unlocks upon death
+	philo_died -> check if philosopher has died, in case the case is true, end program
+	
+------
+
+To even run the program, we need to initialize data. To interpret the arguments as numbers, we
+will probably need to use atoi.
+
+# Question: should we handle the lone philosopher, or do we print an error if there are less than
+#			two philosophers? 
+
+Upon having all the needed elements, we start the program, the rundown of which will be assigned
+by get_time() function.
+
+We also need to set the philo_died boolean expression as false.
+
