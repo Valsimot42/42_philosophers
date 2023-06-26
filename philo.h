@@ -6,7 +6,7 @@
 /*   By: tbolkova <tbolkova@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 12:01:57 by tbolkova          #+#    #+#             */
-/*   Updated: 2023/06/24 15:41:35 by tbolkova         ###   ########.fr       */
+/*   Updated: 2023/06/24 16:08:05 by tbolkova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct 			s_data {
 	pthread_mutex_t	*mutex_forks;
 	pthread_mutex_t	mutex_message;
 	pthread_mutex_t	mutex_death;
-	bool			philo_died;
+	bool			rip_philo;
 }						t_data;
 
 typedef struct 	s_philo {

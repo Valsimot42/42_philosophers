@@ -44,3 +44,8 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
+
+int	ft_isdigit(int d)
+{
+	return (d >= 48 && d <= 57);
+}

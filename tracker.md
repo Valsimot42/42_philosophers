@@ -36,7 +36,7 @@ t_data explained:
 	mutex_death -> if a philosopher dies, mutex unlocks upon death
 	philo_died -> check if philosopher has died, in case the case is true, end program
 	
-------
+-----
 
 To even run the program, we need to initialize data. To interpret the arguments as numbers, we
 will probably need to use atoi.
@@ -48,4 +48,15 @@ Upon having all the needed elements, we start the program, the rundown of which 
 by get_time() function.
 
 We also need to set the philo_died boolean expression as false.
+
+There can be either 5 or 6 arguments, depending if we want to include number of times each philosopher
+must eat. Any other input must print error.
+
+Check if argument is numeric in value (apart from av[0]).
+
+Should program execute if time_to_die is lesser than time_to_eat or time_to_sleep? (probably)
+
+Check for duration of the program here? (yes)
+
+-----
 
