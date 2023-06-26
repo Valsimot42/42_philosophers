@@ -1,5 +1,10 @@
 #include "../philo.h"
 
+int	ft_isdigit(int d)
+{
+	return (d >= 48 && d <= 57);
+}
+
 static int	ft_isspace(int ch)
 {
 	if (ch == ' ')
@@ -43,9 +48,4 @@ size_t	ft_strlen(const char *s)
 	while (s[i] != 0)
 		i++;
 	return (i);
-}
-
-int	ft_isdigit(int d)
-{
-	return (d >= 48 && d <= 57);
 }

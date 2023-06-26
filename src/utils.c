@@ -13,7 +13,7 @@ int is_whitespace(char c)
 	return (1);
 }
 
-int check_vaild_arg(char *av)
+int check_valid_arg(char *av)
 {
 	int i;
 

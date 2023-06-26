@@ -60,3 +60,5 @@ Check for duration of the program here? (yes)
 
 -----
 
+Should next step be initializing mutexes or threads? (mutex)
+

@@ -6,7 +6,7 @@
 /*   By: tbolkova <tbolkova@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 12:01:57 by tbolkova          #+#    #+#             */
-/*   Updated: 2023/06/24 16:08:05 by tbolkova         ###   ########.fr       */
+/*   Updated: 2023/06/26 13:53:58 by tbolkova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,16 @@ int main(int ac, char **av);
 
 
 // utils.c
-void init_data(t_data *data, int ac, char **av);
-void err_message(char *msg);
+void 	init_data(t_data *data, int ac, char **av);
+void 	err_message(char *msg);
+int 	check_valid_arg(char *av);
+int 	is_whitespace(char c);
 
 
 // libft_utils.c
-size_t	ft_strlen(const char *s);
-int	ft_atoi(const char *str);
+int			ft_isdigit(int d);
+int			ft_atoi(const char *str);
+size_t		ft_strlen(const char *s);
 
 #endif
 
