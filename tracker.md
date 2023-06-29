@@ -29,13 +29,30 @@ Two structs will be used, t_data and t_philo:
 t_data explained:
 
 	**av ->
-	philo_num -> ammount of philosophers
-	run_program -> ammount of time for which the program will run (ammount gained from get_time())
+	philo_num -> amount of philosophers
+	run_program -> amount of time for which the program will run (ammount gained from get_time())
 	*mutex_forks -> forks that will serve as mutexes, its number equals philosophers number
 	mutex_message -> message that will be printed upon executing (e.g. "X is eating", "X is sleeping" etc.)
 	mutex_death -> if a philosopher dies, mutex unlocks upon death
 	philo_died -> check if philosopher has died, in case the case is true, end program
 	
+t_philo explained:
+
+	id -> identification for amount of threads (philosophers)
+	eaten_meals -> amount of times philosopher ate a meal
+	num_philo -> amount of philosophers
+	time_routine_start -> 
+	time_program_start ->
+	times_philo_eats -> amount of time routine will repeat
+	action_death -> checks if philosopher is dead
+	action_eating -> checks if philosopher is eating
+	action_sleeping -> checks if philosopher is sleeping
+	finished_eating -> checks if philosopher has finished eating
+	thread ->
+	mutex_left_fork ->
+	mutex_right_fork ->
+	access ->
+
 -----
 
 To even run the program, we need to initialize data. To interpret the arguments as numbers, we
@@ -61,4 +78,21 @@ Check for duration of the program here? (yes)
 -----
 
 Should next step be initializing mutexes or threads? (mutex)
+
+# Question: if forks are mutexes, how will it behave in our code?
+
+Obviously, the number of forks must be the same as the number of philosophers at the table.
+
+NOTE: to properly allocate memory for the mutexes, we must allocate sizeof(pthread_mutex_t) type.
+
+-----
+
+Going back to our main, we must make sure to allocate memory for all the threads (philos) that will
+be executed during our program.
+
+Of course, if there is an error with memory allocation, we need to protect it.
+
+After we have allocated memory, we can initialize said threads (philosophers).
+
+-----
 

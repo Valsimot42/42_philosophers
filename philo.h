@@ -6,7 +6,7 @@
 /*   By: tbolkova <tbolkova@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 12:01:57 by tbolkova          #+#    #+#             */
-/*   Updated: 2023/06/26 13:53:58 by tbolkova         ###   ########.fr       */
+/*   Updated: 2023/06/29 11:50:13 by tbolkova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,28 +33,44 @@ typedef struct 			s_data {
 }						t_data;
 
 typedef struct 	s_philo {
-	int		id;
-	
-	
+	int				id;
+	int				eaten_meals;
+	int				num_philo;
+	int				time_routine_start;
+	int				time_program_start;
+	int				times_philo_eats;
+	int				action_death;
+	int				action_eating;
+	int				action_sleeping;
+	int				finished_eating;
+	pthread_t		thread;
+	pthread_mutex_t	*mutex_left_fork;
+	pthread_mutex_t	*mutex_right_fork;
+	t_data			*access;
 } 				t_philo;
 
 //!-------------SRC---------------
 
-// main.c
+//	main.c
 int main(int ac, char **av);
 
-
-// utils.c
+//	utils.c
 void 	init_data(t_data *data, int ac, char **av);
 void 	err_message(char *msg);
 int 	check_valid_arg(char *av);
 int 	is_whitespace(char c);
 
-
-// libft_utils.c
+//	libft_utils.c
 int			ft_isdigit(int d);
 int			ft_atoi(const char *str);
 size_t		ft_strlen(const char *s);
+
+//	mutex.c
+void create_mutex(t_data *data);
+void destroy_mutex(t_data *data);
+
+//	threads.c
+void init_threads(t_philo *philo, t_data *data, int ac, char **av);
 
 #endif
 

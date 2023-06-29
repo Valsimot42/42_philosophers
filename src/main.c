@@ -12,8 +12,13 @@ int main(int ac, char **av)
 
 	philo = NULL;
 	init_data(&data, ac, av);
-	// pthread_mutex_init();
+	create_mutex(&data);
+	philo = malloc(sizeof(t_philo) * data.philo_num);
+	if (!philo)
+		err_message("ERROR: Philosopher mallocing failed");
+	init_threads(philo, &data, ac, av);
 	// pthread_create();
 	// pthread_join();
-	// pthread_mutex_destroy();
+	destroy_mutex(&data);
+	return (0);
 }
