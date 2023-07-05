@@ -96,3 +96,9 @@ After we have allocated memory, we can initialize said threads (philosophers).
 
 -----
 
+init_threads function takes the data from t_philo and t_data, as well as the number of arguments
+(ac) and its contents (av).
+
+To be able to interpret the arguments, use ft_atoi. Argument av[5] should have a sperate condition
+since it is not mandatory argument.
+
