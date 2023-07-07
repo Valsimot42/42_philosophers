@@ -16,6 +16,7 @@ SRC		=	main.c			\
 			libft_utils.c	\
 			mutex.c			\
 			threads.c		\
+			logic.c			\
 		
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))
 
@@ -61,9 +62,9 @@ norm:
 	norminette -R CheckForbiddenSourceHeader $(HEADER)
 
 #valgrind options
-# --leak-check=full --show-leak-kinds=all --ignore-fn=readline ./minishell
-# --leak-check=full --show-leak-kinds=all --trace-children=yes ./minishell
+# --leak-check=full --show-leak-kinds=all --ignore-fn=readline ./philo
+# --leak-check=full --show-leak-kinds=all --trace-children=yes ./philo
 valg:
-	valgrind --leak-check=full --trace-children=yes --track-fds=yes -s ./minishell
+	valgrind --leak-check=full --trace-children=yes --track-fds=yes -s ./philo
 
 .PHONY: all, libft, clean, fclean

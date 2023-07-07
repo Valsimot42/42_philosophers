@@ -1,8 +1,8 @@
 #include "../philo.h"
 
-void init_threads(t_philo *philo, t_data *data, int ac, char **av)
+void init_threads(t_philo *philo, t_data *data, char **av, int32_t ac)
 {
-	int i;
+	int32_t i;
 
 	i = 0;
 	while (i < data->philo_num)
@@ -21,6 +21,34 @@ void init_threads(t_philo *philo, t_data *data, int ac, char **av)
 		philo[i].access = data;
 		philo[i].time_program_start = data->run_program;
 		philo[i].num_philo = data->philo_num;
+		i++;
+	}
+}
+
+void execute_threads(t_philo *philo)
+{
+	int32_t i;
+
+	i = 0;
+	printf("num_philo: %d\n", philo->num_philo);
+	while (i < philo->num_philo)
+	{
+		if (pthread_create(&philo[i].thread, NULL, (void *)philo_run, &philo[i]))
+			err_message("ERROR: Thread creation failure!");
+		i++;
+		usleep(100);
+	}
+}
+
+void wait_threads(t_philo *philo)
+{
+	int32_t i;
+
+	i = 0;
+	while(i < philo->num_philo)
+	{
+		if(pthread_join(philo[i].thread, NULL))
+			err_message("ERROR: Thread execution failure");
 		i++;
 	}
 }
