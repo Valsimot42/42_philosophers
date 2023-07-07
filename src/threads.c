@@ -1,8 +1,8 @@
 #include "../philo.h"
 
-void init_threads(t_philo *philo, t_data *data, char **av, int32_t ac)
+void init_threads(t_philo *philo, t_data *data, int ac, char **av)
 {
-	int32_t i;
+	int i;
 
 	i = 0;
 	while (i < data->philo_num)
@@ -27,7 +27,7 @@ void init_threads(t_philo *philo, t_data *data, char **av, int32_t ac)
 
 void execute_threads(t_philo *philo)
 {
-	int32_t i;
+	int i;
 
 	i = 0;
 	printf("num_philo: %d\n", philo->num_philo);
@@ -42,7 +42,7 @@ void execute_threads(t_philo *philo)
 
 void wait_threads(t_philo *philo)
 {
-	int32_t i;
+	int i;
 
 	i = 0;
 	while(i < philo->num_philo)

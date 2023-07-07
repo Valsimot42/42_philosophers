@@ -16,6 +16,7 @@ SRC		=	main.c			\
 			libft_utils.c	\
 			mutex.c			\
 			threads.c		\
+			run.c			\
 			logic.c			\
 		
 SRCS	= $(addprefix $(SRC_PATH), $(SRC))

@@ -2,7 +2,7 @@
 
 void create_mutex(t_data *data)
 {
-	int32_t i;
+	int i;
 
 	i = 0;
 	data->mutex_forks = malloc(sizeof(pthread_mutex_t) * data->philo_num);
@@ -22,7 +22,7 @@ void create_mutex(t_data *data)
 
 void destroy_mutex(t_data *data)
 {
-	int32_t i;
+	int i;
 
 	i = 0;
 	while (i < data->philo_num)

@@ -13,9 +13,9 @@ int is_whitespace(char c)
 	return (1);
 }
 
-int32_t check_valid_arg(char *av)
+int check_valid_arg(char *av)
 {
-	int32_t i;
+	int i;
 
 	i = 0;
 	while(av[i] != '\0')
@@ -36,9 +36,9 @@ int64_t get_time(void)
 	return((time.tv_usec / 1000) + (time.tv_sec * 1000));
 }
 
-void init_data(t_data *data, int32_t ac, char **av)
+void init_data(t_data *data, int ac, char **av)
 {
-	int32_t i;
+	int i;
 
 	i = 1;
 	if (ac != 5 && ac != 6)
@@ -52,9 +52,9 @@ void init_data(t_data *data, int32_t ac, char **av)
 			err_message("ERROR: Please enter numeric value!\n");
 		i++;
 	}
-	if (ft_atoi(av[3]) + ft_atoi(av[4]) > ft_atoi(av[2]))
+	if (ft_atoi(av[2]) < (ft_atoi(av[3]) + ft_atoi(av[4])))
 		err_message("ERROR: Time to eat and sleep cannot \
-		be greater than time to die! Input different value!");
+ 					be greater than time to die! Input different value!");
 	data->run_program = get_time();
 	data->rip_philo = false;
 }
